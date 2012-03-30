@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>VRUM!</title>
+	<link href="stylesheets/stylesheet_v1.css" rel="Stylesheet"
+		type="text/css" media="all" />
+	<link href="stylesheets/prettyPhoto.css" rel="Stylesheet"
+		type="text/css" media="all" />
+	<link rel="shortcut icon" href="images/favicon.png" />
+	<script src="../javascripts/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../javascripts/jquery.prettyPhoto.js"
+		type="text/javascript" charset="utf-8"></script>
+	<script src="../javascripts/jquery.maskedinput-1.2.2.js"
+		type="text/javascript" charset="utf-8"></script>
+	<script src="../javascripts/tools.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../javascripts/tools-validation.js" type="text/javascript"
+		charset="utf-8"></script>
+	<meta http-equiv="content-type"
+		content="application/xhtml+xml; charset=utf-8" />
+	<meta http-equiv="content-language" content="pt-br" />
+	<meta name="author"
+		content="Leandro Augusto de Carvalho, Régis Eduardo W. Gregol" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="reply-to" content="" />
+	<meta name="robots" content="index, follow" />
+</h:head>
+  <h:body>
+  <header> <hgroup>
+	<h1>VRUM!</h1>
+	<h2>Locadora de Veículos LTDA.</h2>
+	</hgroup> <nav>
+	<div>
+	<ul>
+		<li><a href="../clientes/alugar.faces" title="">alugue</a></li>
+		<li><a href="../cobertura.faces" title="">coberturas(seguro)</a></li>
+		<li><a href="../planos.faces" title="">planos</a></li>
+		<li><a href="../clientes/cadastro.faces" title="">cadastre-se</a></li>
+		<li><a href="../contato.faces" title="">contato</a></li>
+	</ul>
+	</div>
+	</nav> </header>
+   		
+    <h:form>
+    <div id="wrapper"><section>
+    <p>Entre em contato conosco!</p>
+    	<table border="0">
+			<tr>
+				<td><h:outputLabel value="Titulo: " /></td>
+				<td><h:inputText value="#{coberturaController.cobertura.titulo}" required="true"
+					validatorMessage="Mínimo de 3 caracteres"
+					requiredMessage="Campo Obrigatório">
+					<f:validateLength minimum="3" />
+					</h:inputText>
+					</td>
+					</tr>
+			<tr>
+				<td><h:outputLabel value="Nome : " /></td>
+				<td><h:inputText id="nome" value="#{e.nome}" required="true"
+					validatorMessage="Mínimo de 3 caracteres"
+					requiredMessage="Campo Obrigatório">
+					<f:validateLength minimum="3" />>
+				</h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td><h:outputLabel value="Telefone : " /></td>
+				<td><h:inputText value="#{e.telefone}" /></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel value="E-mail: " /></td>
+				<td><h:inputText value="#{e.email}" /></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel value="Mensagem: " /></td>
+				<td><h:inputTextarea value="#{e.mensagem}" rows="5"/></td>
+			</tr>
+
+			<h:commandButton value="Enviar"
+			action="#{contatoController.cadastrar}" />
+		</table>
+	</section>
+	</div>
+	</h:form>
+  </h:body>
+</html>

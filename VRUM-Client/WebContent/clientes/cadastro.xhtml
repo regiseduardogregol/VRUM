@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>VRUM!</title>
+	<link href="../stylesheets/stylesheet_v1.css" rel="Stylesheet"
+		type="text/css" media="all" />
+	<link href="../stylesheets/prettyPhoto.css" rel="Stylesheet"
+		type="text/css" media="all" />
+	<link rel="shortcut icon" href="images/favicon.png" />
+	<script src="../javascripts/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../javascripts/jquery.prettyPhoto.js"
+		type="text/javascript" charset="utf-8"></script>
+	<script src="../javascripts/jquery.maskedinput-1.2.2.js"
+		type="text/javascript" charset="utf-8"></script>
+	<script src="../javascripts/tools.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../javascripts/tools-validation.js" type="text/javascript"
+		charset="utf-8"></script>
+	<meta http-equiv="content-type"
+		content="application/xhtml+xml; charset=utf-8" />
+	<meta http-equiv="content-language" content="pt-br" />
+	<meta name="author"
+		content="Leandro Augusto de Carvalho, Régis Eduardo W. Gregol" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="reply-to" content="" />
+	<meta name="robots" content="index, follow" />
+</h:head>
+<h:body>
+	<header> <hgroup>
+	<h1>VRUM!</h1>
+	<h2>Locadora de Veículos LTDA.</h2>
+	</hgroup> <nav>
+	<div>
+	<ul>
+		<li><a href="../clientes/alugar.faces" title="">alugue</a></li>
+		<li><a href="../cobertura.faces" title="">coberturas(seguro)</a></li>
+		<li><a href="../planos.faces" title="">planos</a></li>
+		<li><a href="../clientes/cadastro.faces" title="">cadastre-se</a></li>
+		<li><a href="../contato.faces" title="">contato</a></li>
+	</ul>
+	</div>
+	</nav> </header>
+
+		<div id="wrapper">
+			<section>
+		<h1>Cadastro de Cliente</h1>
+		<hr />
+		<h:form>
+			<h1><h:outputLabel value="#{reservaController.mensagem}"></h:outputLabel></h1>
+			<span> <h:outputLabel value="Nome: " /> <h:inputText
+				value="#{clienteController.cliente.nome}" required="true"
+				validatorMessage="Mínimo de 3 caracteres"
+				requiredMessage="Campo Obrigatório">
+				<f:validateLength minimum="3" />
+			</h:inputText> </span>
+
+			<span><h:outputLabel value="RG: " /> <h:inputText
+				value="#{clienteController.cliente.rg}" required="true">
+				<f:validateLength minimum="3" />
+			</h:inputText></span>
+
+			<span><h:outputLabel value="CPF: " /> <h:inputText
+				value="#{clienteController.cliente.cpf}" required="true" class="cpf">
+				<f:validateLength minimum="3" />
+			</h:inputText></span>
+
+			<span><h:outputLabel value="Endereço: " /> <h:inputText
+				value="#{clienteController.cliente.endereco}" required="true">
+				<f:validateLength minimum="3" />
+			</h:inputText></span>
+
+			<span><h:outputLabel value="Bairro: " /> <h:inputText
+				value="#{clienteController.cliente.bairro}" required="true">
+				<f:validateLength minimum="3" />
+			</h:inputText></span>
+
+			<span><h:outputLabel value="Cidade: " /> <h:inputText
+				value="#{clienteController.cliente.cidade}" required="true">
+				<f:validateLength minimum="3" />
+			</h:inputText></span>
+
+			<span><h:outputLabel value="Telefone: " /> <h:inputText
+				value="#{clienteController.cliente.telefone}" required="true" class="phone">
+				<f:validateLength minimum="3" />
+			</h:inputText></span>
+
+			<span><h:outputLabel value="Celular: " /> <h:inputText
+				value="#{clienteController.cliente.celular}" required="true" class="phone">
+				<f:validateLength minimum="3" />
+			</h:inputText></span>
+
+			<span><h:outputLabel value="CNH: " /> <h:inputText
+				value="#{clienteController.cliente.cnh}" required="true">
+				<f:validateLength minimum="3" />
+			</h:inputText></span>
+			<h:messages />
+			<span class="clear"> </span>
+			<h:commandButton value="Cadastrar"
+				action="#{clienteController.cadastraCliente}" />
+		</h:form> </section></div>
+
+</h:body>
+</html>

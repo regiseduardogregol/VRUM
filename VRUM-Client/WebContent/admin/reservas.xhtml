@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>VRUM!</title>
+	<link href="../stylesheets/stylesheet_v1.css" rel="Stylesheet"
+		type="text/css" media="all" />
+	<link href="../stylesheets/prettyPhoto.css" rel="Stylesheet"
+		type="text/css" media="all" />
+	<link rel="shortcut icon" href="images/favicon.png" />
+	<script src="../javascripts/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../javascripts/jquery.prettyPhoto.js"
+		type="text/javascript" charset="utf-8"></script>
+	<script src="../javascripts/jquery.maskedinput-1.2.2.js"
+		type="text/javascript" charset="utf-8"></script>
+	<script src="../javascripts/tools.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../javascripts/tools-validation.js" type="text/javascript"
+		charset="utf-8"></script>
+	<meta http-equiv="content-type"
+		content="application/xhtml+xml; charset=utf-8" />
+	<meta http-equiv="content-language" content="pt-br" />
+	<meta name="author"
+		content="Leandro Augusto de Carvalho, Régis Eduardo W. Gregol" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="reply-to" content="" />
+	<meta name="robots" content="index, follow" />
+</h:head>
+  <h:body>
+   <header> <hgroup>
+	<h1>VRUM!</h1>
+	<h2>Locadora de Veículos LTDA.</h2>
+	</hgroup> <nav>
+	<div>
+	<ul>
+		<li><a href="../cobertura/newCobertura.faces"
+			title="Cadastrar Coberturas">Cadastrar Coberturas</a></li>
+		<li><a href="../veiculo/newTipoVeiculo.faces"
+			title="Cadastrar Planos">Cadastrar Planos</a></li>
+		<li><a href="../veiculo/newVeiculo.faces"
+			title="Cadastrar Tipo de Veículos">Cadastrar Veículos</a></li>
+	</ul>
+	</div>
+	</nav> </header>
+	<h:form>
+		<div id="wrapper">
+			<section>
+		<h:dataTable value="#{reservaController.reservas}" var="r" display="inline;">
+			<h:column>
+			<tr>
+				<td style="width: 100px; font-size: 1.2em"><h:outputLabel value="Reserva : " /></td>
+				<td><h:inputText value="#{r.id}" /></td>
+			</tr>
+			<tr>
+				<td style="width: 100px; font-size: 1.2em"><h:outputLabel value="Data Locação : " /></td>
+				<td>
+				<h:inputText value="#{r.dataLocacao}">
+						<f:convertDateTime pattern="dd/MM/yyyy"/>
+				</h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 100px; font-size: 1.2em"><h:outputLabel value="Data Devolução : " /></td>
+				<td>
+				<h:inputText value="#{r.dataEntrega}">
+						<f:convertDateTime pattern="dd/MM/yyyy"/>
+				</h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 100px; font-size: 1.2em"><h:outputLabel value="Veiculo : " /></td>
+				<td><h:inputText value="#{r.veiculo}" /></td>
+			</tr>
+			<tr>
+				<td style="width: 100px; font-size: 1.2em"><h:outputLabel value="Cliente : " /></td>
+				<td><h:inputText value="#{r.cliente}" /></td>
+			</tr>
+			<tr>
+				<td style="width: 100px; font-size: 1.2em"><h:outputLabel value="Cobertura : " /></td>
+				<td><h:inputText value="#{r.cobertura}" /></td>
+			</tr>
+			</h:column>
+			<h:column>
+				<h:commandButton 
+					actionListener="#{reservaController.deletarReserva}" value="Deletar">
+					<f:param id="idParaDeletar" value="#{t.id}"/>	
+				</h:commandButton>
+			</h:column>
+		</h:dataTable>
+	</section>
+	</div>
+	</h:form>
+</h:body>
+</html>

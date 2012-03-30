@@ -1,0 +1,11 @@
+2010-12-06 00:42:36.930 GMT : Apache Derby Servidor de Rede - 10.5.1.1 - (764942) iniciado e pronto para aceitar conexões na porta 1527 em {3}
+----------------------------------------------------------------
+2010-12-06 00:42:39.989 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.1.1 - (764942): instance a816c00e-012c-b921-4f57-00000000002e
+on database directory C:\Users\Leandro\Desktop\backup4\VRUM-Base\ejb3ds  
+
+Database Class Loader started - derby.database.classpath=''
+
+2010-12-06 03:40:55.610 GMT:
+Shutting down instance a816c00e-012c-b921-4f57-00000000002e
+----------------------------------------------------------------

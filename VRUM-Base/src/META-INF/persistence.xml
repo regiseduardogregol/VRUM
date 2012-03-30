@@ -1,0 +1,27 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+       http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="vrum">
+	   <class>br.com.vrum.locadora.pojo.Cliente</class>
+	    <class>br.com.vrum.locadora.pojo.Cobertura</class>
+	    <class>br.com.vrum.locadora.pojo.ContaAReceber</class>
+	    <class>br.com.vrum.locadora.pojo.Plano</class>
+	    <class>br.com.vrum.locadora.pojo.Reserva</class>
+	    <class>br.com.vrum.locadora.pojo.TipoUsuario</class>
+	    <class>br.com.vrum.locadora.pojo.TipoVeiculo</class>
+	    <class>br.com.vrum.locadora.pojo.Usuario</class>
+	    <class>br.com.vrum.locadora.pojo.Veiculo</class>
+		<properties>
+			<property name="eclipselink.target-database" value="DERBY" />
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:derby://localhost:1527/ejb3ds;create=true" />
+			<property name="javax.persistence.jdbc.user" value="APP" />
+			<property name="javax.persistence.jdbc.password" value="APP" />
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+			<property name="eclipselink.logging.level" value="INFO" />
+		</properties>
+	</persistence-unit>
+</persistence>

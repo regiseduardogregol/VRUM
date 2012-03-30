@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="VRUM-Client">
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="VRUM-Base.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/VRUM-Base/VRUM-Base">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="VRUM-Client"/>
+        <property name="java-output-path" value="/VRUM-Client/build/classes"/>
+    </wb-module>
+</project-modules>
